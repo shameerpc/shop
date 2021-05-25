@@ -79,6 +79,17 @@ router.get('/add-to-cart/:id',(req,res)=>{
     res.json({status:true})
   })
 })
+router.post('/change-product-quantity',(req,res,next)=>{
+  userHelpers.changeProductQuantity(req.body).then((response)=>{
+    res.json(response)
+  })
+})
+
+router.post('/remove-button',(req,res,next)=>{
+  userHelpers.removeButton(req.body).then((response)=>{
+    res.json(response)
+  })
+})
 
 
 
